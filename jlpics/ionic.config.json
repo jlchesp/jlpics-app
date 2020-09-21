@@ -1,0 +1,7 @@
+{
+  "name": "jlpics",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
