@@ -9,4 +9,10 @@ export class Tab2Page {
 
   constructor() {}
 
+  tempImages: string[] = [];
+
+  createPost(){
+
+  }
+
 }
