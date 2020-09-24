@@ -21,6 +21,7 @@ export class Tab3Page implements OnInit {
     this.user = this.userService.getUser();
   }
 
+  // Function that calls the update user service
   async update(updateForm: NgForm){
 
     if(updateForm.invalid){return;}
@@ -35,6 +36,7 @@ export class Tab3Page implements OnInit {
 
   }
 
+  // Function that calls the logout service
   logout(){
     this.postService.postsPage = 0;
     this.userService.logout();

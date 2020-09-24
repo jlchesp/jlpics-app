@@ -6,6 +6,7 @@
 
     <ion-buttons slot="end">
       <ion-button (click)="createPost()"
+                  [disabled] = "post.message.length < 1 || loadingGeo"
                   color="primary">
         Compartir
       </ion-button>
@@ -20,14 +21,17 @@
     
     <ion-item>
       <ion-label position="floating">Mensaje</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)] = "post.message"></ion-textarea>
     </ion-item>
 
     <ion-list>
       <ion-item>
         <ion-label>Posición actual</ion-label>
-        <ion-spinner name="lines-small"></ion-spinner>
-        <ion-toggle slot="end"></ion-toggle>
+        <ion-spinner name="lines-small"
+                     *ngIf = "loadingGeo"></ion-spinner>
+        <ion-toggle slot="end"
+                    [(ngModel)] = "post.position"
+                    (ionChange) = "getGeo()"></ion-toggle>
       </ion-item>
     </ion-list>
 
@@ -37,14 +41,16 @@
   <ion-row>
     <ion-col size="6">
       <ion-button expand="full"
-                  shape="round">
+                  shape="round"
+                  (click) = "openCamera()">
         <ion-icon slot="start" name="camera"></ion-icon>
         Cámara
       </ion-button>
     </ion-col>
     <ion-col size="6">
       <ion-button expand="full"
-                  shape="round">
+                  shape="round"
+                  (click)="openLibrary()">
         <ion-icon slot="start" name="images"></ion-icon>
         Galería
       </ion-button>
@@ -54,7 +60,7 @@
   <ion-row>
     <ion-col size="3" *ngFor="let image of tempImages">
       <ion-card>
-        <img src="">
+        <img [src] = "image | imageSanitizer">
       </ion-card>
     </ion-col>
   </ion-row>

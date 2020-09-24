@@ -6,6 +6,8 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root'
 })
+
+// Guard to protect the routes by validating the token
 export class UserGuard implements CanLoad {
 
   constructor(private userService: UserService){}

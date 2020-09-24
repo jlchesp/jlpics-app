@@ -16,6 +16,9 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
     this.nextPosts();
+    this.postsService.newPost.subscribe(post =>{  // We add the new post to our post array
+      this.posts.unshift(post);
+    });
   }
 
   // Function to refresh the list of posts when sliding down

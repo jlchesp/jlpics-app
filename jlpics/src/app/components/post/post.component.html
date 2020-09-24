@@ -13,14 +13,16 @@
 
   </ion-item>
 
-  <ion-slides pager="true">
+  <!-- <ion-slides pager="true">
 
-    <!-- We pass the image through domSanitizer so that there is no compilation error in JS -->
+    We pass the image through domSanitizer so that there is no compilation error in JS
     <ion-slide class="image-slide" [style]="img1 | domSanitizer"></ion-slide>
     <ion-slide class="image-slide" [style]="img2 | domSanitizer"></ion-slide>
     <ion-slide class="image-slide" [style]="img3 | domSanitizer"></ion-slide>
 
-  </ion-slides>
+  </ion-slides> -->
+
+  <app-map [coords] = "post.coords"></app-map>
 
   <ion-item lines="none">
     <ion-icon slot="start" name="heart-outline"></ion-icon>
