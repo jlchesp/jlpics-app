@@ -1,14 +1,14 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-title>
-      Nuevo Post
+      New Post
     </ion-title>
 
     <ion-buttons slot="end">
       <ion-button (click)="createPost()"
                   [disabled] = "post.message.length < 1 || loadingGeo"
                   color="primary">
-        Compartir
+        Share
       </ion-button>
     </ion-buttons>
 
@@ -20,13 +20,13 @@
   <ion-list>
     
     <ion-item>
-      <ion-label position="floating">Mensaje</ion-label>
+      <ion-label position="floating">Message</ion-label>
       <ion-textarea [(ngModel)] = "post.message"></ion-textarea>
     </ion-item>
 
     <ion-list>
       <ion-item>
-        <ion-label>Posición actual</ion-label>
+        <ion-label>Actual position</ion-label>
         <ion-spinner name="lines-small"
                      *ngIf = "loadingGeo"></ion-spinner>
         <ion-toggle slot="end"
@@ -44,7 +44,7 @@
                   shape="round"
                   (click) = "openCamera()">
         <ion-icon slot="start" name="camera"></ion-icon>
-        Cámara
+        Camera
       </ion-button>
     </ion-col>
     <ion-col size="6">
@@ -52,7 +52,7 @@
                   shape="round"
                   (click)="openLibrary()">
         <ion-icon slot="start" name="images"></ion-icon>
-        Galería
+        Gallery
       </ion-button>
     </ion-col>
   </ion-row>
