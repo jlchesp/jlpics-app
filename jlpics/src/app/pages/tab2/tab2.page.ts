@@ -32,7 +32,9 @@ export class Tab2Page {
       message: '',
       coords: null,
       position: false
-    }
+    };
+
+    this.tempImages = [];
 
     this.route.navigateByUrl('/main/tabs/tab1');
   }
